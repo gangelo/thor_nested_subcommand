@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'pry-byebug'
+require 'thor'
 require 'thor_nested_subcommand'
 
 RSpec.configure do |config|

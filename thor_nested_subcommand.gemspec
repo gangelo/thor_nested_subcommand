@@ -8,8 +8,14 @@ Gem::Specification.new do |spec|
   spec.authors      = ['Gene M. Angelo, Jr.']
   spec.email        = ['public.gma@gmail.com']
 
-  spec.summary      = 'A patch for the Thor gem bug that displays subcommand help incorrectly.'
-  spec.description  = ''
+  spec.summary      = 'A workaround for the Thor gem bug that displays nested subcommand help incorrectly.'
+  spec.description  = <<-DESC
+    `ThorNestedSubcommand` is a Ruby gem that provides a workaround for the
+    Thor gem (https://rubygems.org/gems/thor) bug that displays nested subcommand
+    help incorrectly. Simply include the `ThorNestedSubcommand` module in your Thor
+    nested subcommand, and provide a simple class method to return what Thor help
+    should be displaying, and that's it.
+  DESC
   spec.homepage = 'https://github.com/gangelo/thor_nested_subcommand'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.0.1'

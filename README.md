@@ -1,8 +1,59 @@
 # ThorNestedSubcommand
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/thor_nested_subcommand`. To experiment with that code, run `bin/console` for an interactive prompt.
+`ThorNestedSubcommand` is a Ruby gem that provides a workaround for the [Thor gem](https://rubygems.org/gems/thor) bug that displays nested subcommand help incorrectly. Simply include the `ThorNestedSubcommand` module in your Thor nested subcommand, and provide a simple class method to return what Thor help shoul be displaying, and that's it.
 
-TODO: Delete this and the text above, and describe your gem
+## Usage
+
+First, follow instructions for [installation](#installation).
+
+Secondly, do the following in your Thor `subcommand`:
+* include the `ThorNestedSubcommand`.
+* Add a `.base_name` class method and return the base name for the nested `subcommand` you need Thor help to display.
+
+For example:
+
+```ruby
+require 'thor'
+require 'thor_nested_subcommand'
+
+class Command < ::Thor
+  desc 'sub_command SUBCOMMAND', 'sub command'
+  subcommand :sub_command, SubCommand
+end
+
+class SubCommand < ::Thor
+    desc 'nested_sub_command SUBCOMMAND', 'nested sub command'
+    subcommand :nested_sub_command, NestedSubCommand
+end
+
+# Thor help breaks because this is a nested subcommand.
+class NestedSubCommand < ::Thor
+  # Include this:
+  include ThorNestedSubcommand
+
+  class << self
+    # Add this:
+    def base_usage
+      # Return what Thor shoud be displaying for your nested subcommand:
+      'sub_command nested_sub_command'
+    end
+  end
+
+  desc 'test', 'test the command'
+  def test
+    puts 'test'
+  end
+end
+```
+
+That's it. Disaster averted:
+
+```shell
+$ command sub_command help nested_sub_command
+> Commands:
+>  command sub_command nested_sub_command help [COMMAND]   # Describe subcommands or one specific subcommand
+>  command sub_command nested_sub_command test             # test sub sub command
+```
 
 ## Installation
 
@@ -19,10 +70,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install thor_nested_subcommand
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
