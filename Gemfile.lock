@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    thor_nested_subcommand (0.1.0)
+    thor_nested_subcommand (1.0.0)
 
 GEM
   remote: https://rubygems.org/
