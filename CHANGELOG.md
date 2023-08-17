@@ -3,6 +3,7 @@
 Changes
 
 - Update Ruby gems.
+- Fix rubocop errors.
 
 ## [1.0.0] - 2022-10-06
 
