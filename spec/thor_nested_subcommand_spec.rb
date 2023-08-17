@@ -15,7 +15,7 @@ end
 
 RSpec.describe ThorNestedSubcommand do
   let(:sub_command) do
-    klass = Class.new(::Thor) do
+    klass = Class.new(Thor) do
       desc 'sub_sub_command SUBCOMMAND', 'sub sub command'
       subcommand :sub_sub_command, SubSubCommand
     end
@@ -41,7 +41,7 @@ RSpec.describe ThorNestedSubcommand do
     end
 
     let!(:sub_sub_command) do
-      klass = Class.new(::Thor) do
+      klass = Class.new(Thor) do
         class << self
           def base_usage
             'sub_command sub_sub_command'
@@ -69,7 +69,7 @@ RSpec.describe ThorNestedSubcommand do
     end
 
     let(:sub_sub_command) do
-      klass = Class.new(::Thor) do
+      klass = Class.new(Thor) do
         include ThorNestedSubcommand
 
         class << self
