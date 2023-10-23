@@ -7,9 +7,9 @@ gemspec
 
 gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.12'
-gem 'rubocop', '~> 1.42.0'
+gem 'rubocop', '~> 1.57.1'
 
 gem 'pry-byebug', '~> 3.9'
 gem 'reek', '~> 6.1'
 gem 'simplecov', '~> 0.22.0'
-gem 'thor', '~> 1.2'
+gem 'thor', '~> 1.3'
