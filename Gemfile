@@ -5,11 +5,11 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in thor_nested_subcommand.gemspec
 gemspec
 
-gem 'rake', '~> 13.0'
+gem 'rake', '~> 13.1'
 gem 'rspec', '~> 3.12'
-gem 'rubocop', '~> 1.42.0'
+gem 'rubocop', '~> 1.57.2'
 
 gem 'pry-byebug', '~> 3.9'
 gem 'reek', '~> 6.1'
 gem 'simplecov', '~> 0.22.0'
-gem 'thor', '~> 1.2'
+gem 'thor', '~> 1.3'
