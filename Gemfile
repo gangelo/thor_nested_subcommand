@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in thor_nested_subcommand.gemspec
 gemspec
 
-gem 'rake', '~> 13.0'
+gem 'rake', '~> 13.1'
 gem 'rspec', '~> 3.12'
 gem 'rubocop', '~> 1.42.0'
 
