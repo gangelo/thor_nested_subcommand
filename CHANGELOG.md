@@ -1,3 +1,9 @@
+## [1.0.4] - 2023-12-02
+
+Changes
+
+- Update rubocop version.
+
 ## [1.0.3] - 2023-12-02
 
 Changes
