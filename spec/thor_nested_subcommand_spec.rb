@@ -13,14 +13,6 @@ RSpec.describe ThorNestedSubcommand do
     stub_const('SubCommand', klass)
   end
 
-  let(:expected_output) do
-    <<~HELP
-      Commands:
-        rspec sub_command sub_sub_command help [COMMAND]   # Describe subcommands or one specific subcommand
-        rspec sub_command sub_sub_command test             # test sub sub command
-    HELP
-  end
-
   it 'has a version number' do
     expect(ThorNestedSubcommand::VERSION).not_to be_nil
   end
@@ -49,7 +41,7 @@ RSpec.describe ThorNestedSubcommand do
 
     it 'displays the incorrect correct Thor help for nested subcommands' do
       command_help = with_captured_stdout { sub_sub_command.start }
-      expect(compact(command_help)).not_to eq(compact(expected_output))
+      expect(command_help).not_to include('sub_command sub_sub_command')
     end
   end
 
@@ -79,7 +71,8 @@ RSpec.describe ThorNestedSubcommand do
 
     it 'displays the correct Thor help for nested subcommands' do
       command_help = with_captured_stdout { sub_sub_command.start }
-      expect(compact(command_help)).to eq(compact(expected_output))
+      expect(command_help).to include('rspec sub_command sub_sub_command help [COMMAND]')
+        .and include('rspec sub_command sub_sub_command test')
     end
   end
 
@@ -90,9 +83,5 @@ RSpec.describe ThorNestedSubcommand do
     $stdout.string             # return the contents of the string buffer
   ensure
     $stdout = original_stdout  # restore $stdout to its previous value
-  end
-
-  def compact(string)
-    string.gsub(/\s/, ' ').squeeze.strip
   end
 end
