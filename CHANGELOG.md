@@ -1,3 +1,10 @@
+## [1.0.5] - 2023-12-27
+
+Changes
+
+- Update ruby gems (including thor version).
+- Refactor specs for use with `bundle exec rake` to be used with github actions.
+
 ## [1.0.4] - 2023-12-02
 
 Changes

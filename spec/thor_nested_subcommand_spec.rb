@@ -1,19 +1,10 @@
 # frozen_string_literal: true
 
-def with_captured_stdout
-  original_stdout = $stdout  # capture previous value of $stdout
-  $stdout = StringIO.new     # assign a string buffer to $stdout
-  yield                      # perform the body of the user code
-  $stdout.string             # return the contents of the string buffer
-ensure
-  $stdout = original_stdout  # restore $stdout to its previous value
-end
-
-def compact(string)
-  string.gsub(/\s/, ' ').squeeze.strip
-end
-
 RSpec.describe ThorNestedSubcommand do
+  before do
+    ARGV.clear
+  end
+
   let(:sub_command) do
     klass = Class.new(Thor) do
       desc 'sub_sub_command SUBCOMMAND', 'sub sub command'
@@ -90,5 +81,18 @@ RSpec.describe ThorNestedSubcommand do
       command_help = with_captured_stdout { sub_sub_command.start }
       expect(compact(command_help)).to eq(compact(expected_output))
     end
+  end
+
+  def with_captured_stdout
+    original_stdout = $stdout  # capture previous value of $stdout
+    $stdout = StringIO.new     # assign a string buffer to $stdout
+    yield                      # perform the body of the user code
+    $stdout.string             # return the contents of the string buffer
+  ensure
+    $stdout = original_stdout  # restore $stdout to its previous value
+  end
+
+  def compact(string)
+    string.gsub(/\s/, ' ').squeeze.strip
   end
 end

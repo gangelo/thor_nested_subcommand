@@ -22,7 +22,7 @@ module ThorNestedSubcommand
     # Thor override
     # rubocop:disable Style/OptionHash
     def desc(usage, description, options = {})
-      super "#{base_usage} #{usage} ", description, options
+      super("#{base_usage} #{usage} ", description, options)
     end
     # rubocop:enable Style/OptionHash
 
