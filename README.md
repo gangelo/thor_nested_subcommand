@@ -1,3 +1,5 @@
+[![Ruby](https://github.com/gangelo/thor_nested_subcommand/actions/workflows/ruby.yml/badge.svg)](https://github.com/gangelo/thor_nested_subcommand/actions/workflows/ruby.yml)
+
 # ThorNestedSubcommand
 
 `ThorNestedSubcommand` is a Ruby gem that provides a workaround for the [Thor gem](https://rubygems.org/gems/thor) bug that displays nested subcommand help incorrectly. Simply include the `ThorNestedSubcommand` module in your Thor nested subcommand, and provide a simple class method to return what Thor help shoul be displaying, and that's it.
