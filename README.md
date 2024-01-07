@@ -1,6 +1,6 @@
 [![Ruby](https://github.com/gangelo/thor_nested_subcommand/actions/workflows/ruby.yml/badge.svg?refresh=1)](https://github.com/gangelo/thor_nested_subcommand/actions/workflows/ruby.yml)
-[![GitHub version](http://badge.fury.io/gh/gangelo%2Fthor_nested_subcommand.svg?refresh=3)](https://badge.fury.io/gh/gangelo%2Fthor_nested_subcommand)
-[![Gem Version](https://badge.fury.io/rb/thor_nested_subcommand.svg?refresh=3)](https://badge.fury.io/rb/thor_nested_subcommand)
+[![GitHub version](http://badge.fury.io/gh/gangelo%2Fthor_nested_subcommand.svg?refresh=4)](https://badge.fury.io/gh/gangelo%2Fthor_nested_subcommand)
+[![Gem Version](https://badge.fury.io/rb/thor_nested_subcommand.svg?refresh=4)](https://badge.fury.io/rb/thor_nested_subcommand)
 [![](http://ruby-gem-downloads-badge.herokuapp.com/thor_nested_subcommand?type=total)](http://www.rubydoc.info/gems/thor_nested_subcommand/)
 [![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/gems/thor_nested_subcommand/)
 [![Report Issues](https://img.shields.io/badge/report-issues-red.svg)](https://github.com/gangelo/thor_nested_subcommand/issues)
