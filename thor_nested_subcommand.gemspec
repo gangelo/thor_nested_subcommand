@@ -43,4 +43,33 @@ Gem::Specification.new do |spec|
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
   spec.metadata['rubygems_mfa_required'] = 'true'
+  spec.post_install_message = <<~POST_INSTALL
+    Thank you for installing thor_nested_subcommand.
+
+    View the thor_nested_subcommand README.md here: https://github.com/gangelo/thor_nested_subcommand
+    View the thor_nested_subcommand CHANGELOG.md: https://github.com/gangelo/thor_nested_subcommand/blob/main/CHANGELOG.md
+
+             **
+            ****
+           *******
+          **********
+    ***********************
+       *****************
+         *************
+        ******* *******
+       *****       *****
+      ***             ***
+     **                 **
+
+    Using thor_nested_subcommand? thor_nested_subcommand is made available free of charge. Please consider giving thor_nested_subcommand a STAR on GitHub as well as sharing thor_nested_subcommand with your fellow developers on social media.
+
+    Knowing that thor_nested_subcommand is being used and appreciated is a great motivator to continue developing and improving thor_nested_subcommand.
+
+    >>> Star it on github: https://github.com/gangelo/thor_nested_subcommand
+    >>> Share on social media: https://rubygems.org/gems/thor_nested_subcommand
+
+    Thank you!
+
+    <3 Gene
+  POST_INSTALL
 end
