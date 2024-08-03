@@ -1,3 +1,10 @@
+## [1.0.9] - 2024-08-03
+
+Changes
+
+- Update ruby gems.
+- Patch rexml security vulnerability.
+
 ## [1.0.8] - 2024-02-18
 
 Changes
